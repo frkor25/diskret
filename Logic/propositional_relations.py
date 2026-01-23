@@ -1,10 +1,22 @@
 from truthtable import *
-
+# propositional_relations
 # Syntax of expressions should be written as specified in main() of "truthtable.py"
+#Operator syntax:
+#and
+#or
+#not (can be written either as "-" or "not")
+#imp = implication
+#bimp = bi-implication
+#xor: exclusive or
 
 def is_equivalent(expression_1, expression_2) -> bool:
     """Checks if two propositions has same truthvalues."""
     compound = f"({expression_1}) bimp ({expression_2})"
+    return all(generate_truthtable(compound)[3])
+
+def is_negation(expression_1, expression_2) -> bool:
+    """Checks if one proposition is the negation of the other."""
+    compound = f"({expression_1}) bimp (not ({expression_2}))"
     return all(generate_truthtable(compound)[3])
 
 def is_tautology(expression) -> bool:

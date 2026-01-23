@@ -1,6 +1,15 @@
 PY_OPERATORS = ["and", "or", "==", "not", "!="]
 
 # Run this program as a whole
+# Kør dette program i terminalen!!!
+
+#Operator syntax:
+#and
+#or
+#not (can be written either as "-" or "not")
+#imp = implication
+#bimp = bi-implication
+#xor: exclusive or
 
 TruthTable = tuple[str, list, list, list]
 

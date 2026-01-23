@@ -18,13 +18,30 @@ def is_partial_order(relation, domain: set[str]):
             is_transitive(relation) and
             is_antisymmetric(relation)
             )
+#=====================================================================================================
+# check_all_properties({("a", "a"), ("a", "b"), ("a", "c"), ("b", "b"), ("b", "c"), ("c", "c"), ("d", "d")}, {"a", "b", "c", "d"})
+# check_all_properties({("", ""), ("", ""), ("", ""), ("", ""), ("", ""), ("", ""), ("", "")}, {"", "", "", ""})
 
+def check_all_properties(relation: set[tuple[str]], domain: set[str]) -> dict[str, bool]:
+    """Checks all relation properties at once and returns a dictionary of results"""
+    results = {
+        'reflexive': is_reflexive(relation, domain),
+        'symmetric': is_symmetric(relation),
+        'antisymmetric': is_antisymmetric(relation),
+        'transitive': is_transitive(relation),
+        'equivalence': is_equivalence(relation, domain),
+        'partial_order': is_partial_order(relation, domain),
+        'total_order': is_total_order(relation, domain)
+    }
+    print("{")
+    for key, value in results.items():
+        print(f"'{key}': {value},")
+    print("}")
 
 def is_reflexive(relation: set[tuple[str]], domain: set[str]) -> bool:
     """Checks if relation is reflexive"""
     for element in domain:
         if (element, element) not in relation:
-            print(element, element)
             return False
     return True
 
@@ -78,6 +95,16 @@ def transitive_closure(relation: set[tuple[str]]) -> set[tuple[str]]:
         return closed_relation
     else:
         return transitive_closure(closed_relation)
+
+def antisymmetric_closure(relation: set[tuple[str]]) -> set[tuple[str]]:
+    """Returns the antisymmetric closure of a relation
+    Removes (a, b) if (b, a) exists and a != b
+    """
+    closed_relation = set(relation)
+    for pair in relation:
+        if pair[0] != pair[1] and (pair[1], pair[0]) in closed_relation:
+            closed_relation.discard(pair)
+    return closed_relation
 
 def relation_composite(relation1: set[tuple[str]], relation2: set[tuple[str]]):
     """Returns the composite of two relations"""
