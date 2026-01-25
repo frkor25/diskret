@@ -153,7 +153,7 @@ def euler_totient(n: int) -> int:
         result -= result // n
     return result
 
-def solve_congruence_system(congruences: list[tuple[int, int]], limit: int = 25000) -> list[int]:
+def solve_congruence_system(congruences: list[tuple[int, int]], limit: int = 2000) -> list[int]:
     """
     Solves a system of linear congruences using brute force.
     

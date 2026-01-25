@@ -1,5 +1,7 @@
 matrix = list[list]
 
+# matrix_operations
+
 def matrix_product(a: matrix, b: matrix) -> matrix:
     """Returns matrix product of a and b."""
     product_matrix = [[0 for col in b[0]] for row in a]
@@ -21,7 +23,7 @@ def power_matrix(a: matrix, exponent: int) -> matrix:
     
 
 def matrix_bool_product(a: matrix, b: matrix) -> matrix:
-    """Returns the boolean product of two boolean matrices a and b."""
+    """Returns the boolean product of two boolean matrices a and b ⊙."""
     bool_product_matrix = [[0 for col in b[0]] for row in a]
     i = 0
     while i < len(a):
@@ -33,7 +35,7 @@ def matrix_bool_product(a: matrix, b: matrix) -> matrix:
     return bool_product_matrix
 
 def matrix_join(a: matrix, b: matrix) -> matrix:
-    """Returns the joined matrix of two boolean matrices a and b."""
+    """Returns the joined matrix of two boolean matrices a and b ∨."""
     joined_matrix = [[0 for col in a[0]] for row in a]
     i = 0
     while i < len(a):
@@ -48,7 +50,7 @@ def matrix_join(a: matrix, b: matrix) -> matrix:
     return joined_matrix
 
 def matrix_meet(a: matrix, b: matrix) -> matrix:
-    """Returns the meet of two boolean matrices a and b."""
+    """Returns the meet of two boolean matrices a and b ∧."""
     meet_matrix = [[0 for col in a[0]] for row in a]
     i = 0
     while i < len(a):

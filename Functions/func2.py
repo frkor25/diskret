@@ -5,25 +5,14 @@
 
 def f(x):
     """definer en funktion f her"""
-<<<<<<< HEAD
-    return x ** 3 + 1
+    return (x ** 3) + 1
 
 def g(x):
     """definer en anden funktion g her"""
-    return x ** 2 - (2 * x) - 1
-
-# Standardindstillinger for tests
-DOMAIN_START = 1
-=======
-    return (x + 1)**2 -1
-
-def g(x):
-    """definer en anden funktion g her"""
-    return x * 2
+    return (x ** 2) - (2 * x) - 1
 
 # Standardindstillinger for tests
 DOMAIN_START = 0
->>>>>>> b1d1da2f9ae83b185af05f7c323264b230f98b6b
 DOMAIN_END = 100
 CODOMAIN_END = 10000
 
