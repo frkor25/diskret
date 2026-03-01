@@ -204,6 +204,10 @@ def check_congruence_solvability(congruences: list[tuple[int, int]]) -> bool:
     """
     Checks if a system of congruences has a solution.
     Uses pairwise compatibility check.
+
+    fx.
+    x≡5(mod10) og x≡10(mod10)
+    check_congruence_solvability([(5,10),(10,10)])
     """
     for i, (a1, n1) in enumerate(congruences):
         for a2, n2 in congruences[i+1:]:

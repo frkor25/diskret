@@ -5,11 +5,11 @@
 
 def f(x):
     """definer en funktion f her"""
-    return (x * 2) ** 2
+    return (x**3) + 1
 
 def g(x):
     """definer en anden funktion g her"""
-    return (x / 2) + 2
+    return ((2**x) - (2*x)) - 1
 
 # Standardindstillinger for tests
 DOMAIN_START = 0
